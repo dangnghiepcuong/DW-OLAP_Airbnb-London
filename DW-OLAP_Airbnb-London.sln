@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "DW-OLAP_Airbnb-London", "DW-OLAP_Airbnb-London\DW-OLAP_Airbnb-London.dtproj", "{447AF015-A885-452D-9546-6F6369A21F42}"
 EndProject
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Test Airbnb-London", "Test Airbnb-London\Test Airbnb-London.dtproj", "{C8771761-90AA-47AE-81DA-D34F6B8FC37F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -12,6 +14,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{447AF015-A885-452D-9546-6F6369A21F42}.Development|Default.ActiveCfg = Development
 		{447AF015-A885-452D-9546-6F6369A21F42}.Development|Default.Build.0 = Development
+		{C8771761-90AA-47AE-81DA-D34F6B8FC37F}.Development|Default.ActiveCfg = Development
+		{C8771761-90AA-47AE-81DA-D34F6B8FC37F}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
