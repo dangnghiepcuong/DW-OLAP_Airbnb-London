@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="289"
-  DTS:VersionGUID="{422AF70D-CBCA-4590-991E-E06ED9770825}">
+  DTS:VersionBuild="291"
+  DTS:VersionGUID="{88CFEF56-1869-4E4E-A5B4-B7DF7FEA22AB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -851,12 +851,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=NGHIEP-CUONG;User ID=olap;Initial Catalog=Airbnb;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package-{F894A1E0-3F43-4E60-8888-703508557AD5}NGHIEP-CUONG.Airbnb.olap;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvLBv2s/VZkOtegOLoG5+1gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD93ndefqLiEJUhSkR7ph2GPF5y/oMznJ4XW9tz3AVVIAAAAAAOgAAAAAIAACAAAABIJ5EdUoYsH35quQb4m8AZXNI6V/NGT/4M1e09Q2ZtpxAAAAABxonjjezsB8uu9iIJHvWqQAAAAOh5cf3BBL/PXdGXCJDtZLhRHrIaW/r03wSJLL7M69xP+86krZUau+w7MaTDZsnsG5sScjHiEuYW5KVIrMR8kVo</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=NGHIEP-CUONG;User ID=olap;Initial Catalog=Airbnb;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package-{F894A1E0-3F43-4E60-8888-703508557AD5}NGHIEP-CUONG.Airbnb.olap;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -7038,13 +7033,47 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="331.333333333334,42.6666666666667"
-          Id="Package\Test importing text and number in separated pipeline"
-          TopLeft="622.499972172082,149.499992871285" />
+          Size="129.333333333334,42.6666666666667"
+          Id="Package\Clear Data"
+          TopLeft="386.24998273328,52.1666644970577" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Data Flow Task"
+          TopLeft="368.749983515591,136.666660467784" />
         <NodeLayout
           Size="173.333333333334,42.6666666666667"
           Id="Package\Execute SQL Task 1"
           TopLeft="591.874973541126,40.2999980783463" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Execute SQL Task 2"
+          TopLeft="364.999983683229,247.166655198733" />
+        <NodeLayout
+          Size="331.333333333334,42.6666666666667"
+          Id="Package\Test importing text and number in separated pipeline"
+          TopLeft="622.499972172082,149.499992871285" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 1]"
+          TopLeft="447.833316457769,94.8333311637244">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.8333293040596"
+              Start="0,0"
+              End="0,34.3333293040596">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.3333293040596" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="678.541640207793,82.966664745013">
@@ -7079,18 +7108,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="129.333333333334,42.6666666666667"
-          Id="Package\Clear Data"
-          TopLeft="386.24998273328,52.1666644970577" />
-        <NodeLayout
-          Size="152,42.6666666666667"
-          Id="Package\Data Flow Task"
-          TopLeft="368.749983515591,136.666660467784" />
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Execute SQL Task 2"
-          TopLeft="364.999983683229,247.166655198733" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="445.87498359941,179.333327134451">
@@ -7113,20 +7130,44 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="186.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task\Number cell conditions"
+          TopLeft="275.333325127761,129.809519940899" />
+        <NodeLayout
+          Size="208,42.6666666666667"
+          Id="Package\Data Flow Task\Conversion of Number cells"
+          TopLeft="547.999983668328,131.333329419295" />
+        <NodeLayout
+          Size="112,42.6666666666667"
+          Id="Package\Data Flow Task\listings"
+          TopLeft="86.4285688527993,132.380948435693" />
+        <NodeLayout
+          Size="139.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task\Dim_Listings"
+          TopLeft="794.999976307154,130.714281818697" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1 1]"
-          TopLeft="447.833316457769,94.8333311637244">
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="198.428568852799,152.428567521629">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.8333293040596"
+              EndConnector="76.9047562749615,0"
               Start="0,0"
-              End="0,34.3333293040596">
+              End="69.4047562749615,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.3333293040596" />
+                    End="69.4047562749615,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7135,22 +7176,92 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="755.999983668328,152.357138952329">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="38.999992638826,0"
+              Start="0,0"
+              End="31.499992638826,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="31.499992638826,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Case 1]"
+          TopLeft="461.999991794428,151.90475801343">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.9999918739003,0"
+              Start="0,0"
+              End="78.4999918739003,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="78.4999918739003,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="24.0319099994501,5,30.436171875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="prevent null &amp; empty in cell contains number"
+          ParentId="Package\Data Flow Task"
+          FontInfo="{assembly:Null}"
+          Size="268,40"
+          Id="ec0ddb0c-81ea-45b7-855f-676a0ec06bb3"
+          TopLeft="252.142849628415,82.1428546948093" />
+        <AnnotationLayout
+          Text="converse number columns to suitable number types"
+          ParentId="Package\Data Flow Task"
+          FontInfo="{assembly:Null}"
+          Size="172,56"
+          Id="dd05ddc0-85ef-431f-809d-0df6cf52bdb9"
+          TopLeft="557.142840538707,74.5714263490269" />
+        <AnnotationLayout
+          Text="specify delimiter, qualifier;&#xA;specify qualified columns"
+          ParentId="Package\Data Flow Task"
+          FontInfo="{assembly:Null}"
+          Size="166.666666666667,56"
+          Id="65b6e8ce-80ee-4f3b-8795-763484ad21fc"
+          TopLeft="79.9999976158143,79.4999976307154" />
+        <AnnotationLayout
+          Text="mapping input columns&#xA;to DB table columns"
+          ParentId="Package\Data Flow Task"
+          FontInfo="{assembly:Null}"
+          Size="154.666666666667,56"
+          Id="2bac6f85-e348-4761-b179-162bb97a9604"
+          TopLeft="799.499976173044,77.4999976903201" />
       </GraphLayout>
     </LayoutInfo>
-  </Package>
+  </TaskHost>
   <TaskHost
     design-time-name="Package\Test importing text and number in separated pipeline">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="181.333333333334,42.6666666666667"
-          Id="Package\Test importing text and number in separated pipeline\OLE DB Destination 1"
-          TopLeft="687.142836664405,54.9999983608724" />
-        <NodeLayout
-          Size="172,42.6666666666667"
-          Id="Package\Test importing text and number in separated pipeline\OLE DB Destination"
-          TopLeft="833.571403729065,152.857138301645" />
+          Size="210.666666666667,42.6666666666667"
+          Id="Package\Test importing text and number in separated pipeline\listing_text Conditional Split"
+          TopLeft="303.48212956717,58.1428577806273" />
         <NodeLayout
           Size="149.333333333334,42.6666666666667"
           Id="Package\Test importing text and number in separated pipeline\listing_number"
@@ -7168,45 +7279,27 @@
           Id="Package\Test importing text and number in separated pipeline\Data Conversion"
           TopLeft="616.124972702936,151.749993026257" />
         <NodeLayout
-          Size="210.666666666667,42.6666666666667"
-          Id="Package\Test importing text and number in separated pipeline\listing_text Conditional Split"
-          TopLeft="303.48212956717,58.1428577806273" />
+          Size="181.333333333334,42.6666666666667"
+          Id="Package\Test importing text and number in separated pipeline\OLE DB Destination 1"
+          TopLeft="687.142836664405,54.9999983608724" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Test importing text and number in separated pipeline\OLE DB Destination"
+          TopLeft="833.571403729065,152.857138301645" />
         <EdgeLayout
-          Id="Package\Test importing text and number in separated pipeline.Paths[Flat File Source Output1]"
-          TopLeft="227.190473870153,176.333328713974">
+          Id="Package\Test importing text and number in separated pipeline.Paths[Data Conversion Output]"
+          TopLeft="773.45830603627,173.636898997284">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="84.9523739701227,0"
+              EndConnector="60.1130976927952,0"
               Start="0,0"
-              End="77.4523739701227,0">
+              End="52.6130976927952,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="77.4523739701227,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Test importing text and number in separated pipeline.Paths[Flat File Source Output]"
-          TopLeft="199.904761649314,80.8452376858823">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="103.577367917856,0"
-              Start="0,0"
-              End="96.0773679178561,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="96.0773679178561,0" />
+                    End="52.6130976927952,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7261,27 +7354,20 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <AnnotationLayout
-          Text="&#xA;"
-          ParentId="Package\Test importing text and number in separated pipeline"
-          FontInfo="{assembly:Null}"
-          Size="29.3333333333334,56"
-          Id="b3c5c743-d735-4868-9f96-87a33b1d3a4d"
-          TopLeft="37.9999988675118,105.499996855855" />
         <EdgeLayout
-          Id="Package\Test importing text and number in separated pipeline.Paths[Data Conversion Output]"
-          TopLeft="773.45830603627,173.636898997284">
+          Id="Package\Test importing text and number in separated pipeline.Paths[Flat File Source Output1]"
+          TopLeft="227.190473870153,176.333328713974">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="60.1130976927952,0"
+              EndConnector="84.9523739701227,0"
               Start="0,0"
-              End="52.6130976927952,0">
+              End="77.4523739701227,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="52.6130976927952,0" />
+                    End="77.4523739701227,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7290,6 +7376,35 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Test importing text and number in separated pipeline.Paths[Flat File Source Output]"
+          TopLeft="199.904761649314,80.8452376858823">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="103.577367917856,0"
+              Start="0,0"
+              End="96.0773679178561,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="96.0773679178561,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="&#xA;"
+          ParentId="Package\Test importing text and number in separated pipeline"
+          FontInfo="{assembly:Null}"
+          Size="29.3333333333334,56"
+          Id="b3c5c743-d735-4868-9f96-87a33b1d3a4d"
+          TopLeft="37.9999988675118,105.499996855855" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -7319,125 +7434,5 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="186.666666666667,42.6666666666667"
-          Id="Package\Data Flow Task\Number cell conditions"
-          TopLeft="275.333325127761,129.809519940899" />
-        <NodeLayout
-          Size="208,42.6666666666667"
-          Id="Package\Data Flow Task\Conversion of Number cells"
-          TopLeft="547.999983668328,131.333329419295" />
-        <NodeLayout
-          Size="139.333333333334,42.6666666666667"
-          Id="Package\Data Flow Task\Dim_Listings"
-          TopLeft="794.999976307154,130.714281818697" />
-        <NodeLayout
-          Size="112,42.6666666666667"
-          Id="Package\Data Flow Task\listings"
-          TopLeft="86.4285688527993,132.380948435693" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="755.999983668328,152.357138952329">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="38.999992638826,0"
-              Start="0,0"
-              End="31.499992638826,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="31.499992638826,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Case 1]"
-          TopLeft="461.999991794428,151.90475801343">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="85.9999918739003,0"
-              Start="0,0"
-              End="78.4999918739003,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="78.4999918739003,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="24.0319099994501,5,30.436171875,9.5537109375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="198.428568852799,152.428567521629">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="76.9047562749615,0"
-              Start="0,0"
-              End="69.4047562749615,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="69.4047562749615,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="prevent null &amp; empty in cell contains number"
-          ParentId="Package\Data Flow Task"
-          FontInfo="{assembly:Null}"
-          Size="268,40"
-          Id="ec0ddb0c-81ea-45b7-855f-676a0ec06bb3"
-          TopLeft="252.142849628415,82.1428546948093" />
-        <AnnotationLayout
-          Text="converse number columns to suitable number types"
-          ParentId="Package\Data Flow Task"
-          FontInfo="{assembly:Null}"
-          Size="172,56"
-          Id="dd05ddc0-85ef-431f-809d-0df6cf52bdb9"
-          TopLeft="557.142840538707,74.5714263490269" />
-        <AnnotationLayout
-          Text="specify delimiter, qualifier;&#xD;&#xA;specify qualified columns"
-          ParentId="Package\Data Flow Task"
-          FontInfo="{assembly:Null}"
-          Size="166.666666666667,60"
-          Id="65b6e8ce-80ee-4f3b-8795-763484ad21fc"
-          TopLeft="79.9999976158143,79.4999976307154" />
-        <AnnotationLayout
-          Text="mapping input columns&#xD;&#xA;to DB table columns"
-          ParentId="Package\Data Flow Task"
-          FontInfo="{assembly:Null}"
-          Size="154.666666666667,60"
-          Id="2bac6f85-e348-4761-b179-162bb97a9604"
-          TopLeft="799.499976173044,77.4999976903201" />
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
