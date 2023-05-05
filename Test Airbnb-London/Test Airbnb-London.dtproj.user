@@ -8,6 +8,7 @@
         <UseWinAuth>false</UseWinAuth>
         <WinAuthUserName />
         <WinAuthDomain />
+        <StartObjectID>Ai_Package.dtsx</StartObjectID>
         <Run64BitRuntime>false</Run64BitRuntime>
         <UserIDs />
         <UserPasswords />
