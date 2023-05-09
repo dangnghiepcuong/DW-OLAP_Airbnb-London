@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/5/2023 9:24:48 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="208"
-  DTS:VersionGUID="{E02DD820-2CC4-4016-90DB-CAFB1CE24518}">
+  DTS:VersionBuild="196"
+  DTS:VersionGUID="{F94CC7AB-447D-486F-89CD-08CFCB961402}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1143,7 +1143,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{876E7162-BFB3-46DA-8BDC-CC0AB80A9959}"
-          SQLTask:SqlStatementSource="update Dim_Date set day = DAY(date)&#xA;update Dim_Date set month = MONTH(date)&#xA;update Dim_Date set year = YEAR(date)&#xA;&#xA;--ADD CONSTRAINTS&#xA;ALTER TABLE Dim_Listing ADD CONSTRAINT FK_Listing_State FOREIGN KEY (state) REFERENCES Dim_State (state);&#xA;ALTER TABLE Dim_Listing ADD CONSTRAINT FK_Listing_City FOREIGN KEY (city) REFERENCES Dim_City (city);&#xA;ALTER TABLE Dim_Listing ADD CONSTRAINT FK_Listing_Country FOREIGN KEY (country_code) REFERENCES Dim_Country (country_code);&#xA;ALTER TABLE Dim_Listing ADD CONSTRAINT FK_Listing_Host FOREIGN KEY (host_id) REFERENCES Dim_Host (host_id);&#xA;ALTER TABLE Dim_Listing ADD CONSTRAINT FK_Listing_Date_1 FOREIGN KEY (first_review) REFERENCES Dim_Date(date);&#xA;ALTER TABLE Dim_Listing ADD CONSTRAINT FK_Listing_Date_2 FOREIGN KEY (last_review) REFERENCES Dim_Date(date);&#xA;&#xA;ALTER TABLE Dim_Host ADD CONSTRAINT FK_Host_Date FOREIGN KEY (host_since) REFERENCES Dim_Date(date);&#xA;&#xA;ALTER TABLE Fact_Review ADD CONSTRAINT FK_Review_Listing FOREIGN KEY (listing_id) REFERENCES Dim_Listing (id);&#xA;ALTER TABLE Fact_Review ADD CONSTRAINT FK_Review_Reviewer FOREIGN KEY (reviewer_id) REFERENCES Dim_Reviewer (reviewer_id);&#xA;ALTER TABLE Fact_Review ADD CONSTRAINT FK_Review_Date FOREIGN KEY (date) REFERENCES Dim_Date(date);&#xA;&#xA;&#xA;ALTER TABLE Fact_Calendar ADD CONSTRAINT FK_Calendar_Listing FOREIGN KEY (listing_id) REFERENCES Dim_Listing (id);&#xA;ALTER TABLE Fact_Calendar ADD CONSTRAINT FK_Calendar_Date FOREIGN KEY (date) REFERENCES Dim_Date(date);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update Dim_Date set day = DAY(date)&#xA;update Dim_Date set month = MONTH(date)&#xA;update Dim_Date set year = YEAR(date)&#xA;&#xA;--ADD CONSTRAINTS&#xA;ALTER TABLE Dim_Listing ADD CONSTRAINT FK_Listing_State FOREIGN KEY (state) REFERENCES Dim_State (state);&#xA;ALTER TABLE Dim_Listing ADD CONSTRAINT FK_Listing_City FOREIGN KEY (city) REFERENCES Dim_City (city);&#xA;ALTER TABLE Dim_Listing ADD CONSTRAINT FK_Listing_Country FOREIGN KEY (country_code) REFERENCES Dim_Country (country_code);&#xA;ALTER TABLE Dim_Listing ADD CONSTRAINT FK_Listing_Host FOREIGN KEY (host_id) REFERENCES Dim_Host (host_id);&#xA;ALTER TABLE Dim_Listing ADD CONSTRAINT FK_Listing_Date_1 FOREIGN KEY (first_review) REFERENCES Dim_Date(date);&#xA;ALTER TABLE Dim_Listing ADD CONSTRAINT FK_Listing_Date_2 FOREIGN KEY (last_review) REFERENCES Dim_Date(date);&#xA;&#xA;ALTER TABLE Fact_Review ADD CONSTRAINT FK_Review_Listing FOREIGN KEY (listing_id) REFERENCES Dim_Listing (id);&#xA;ALTER TABLE Fact_Review ADD CONSTRAINT FK_Review_Reviewer FOREIGN KEY (reviewer_id) REFERENCES Dim_Reviewer (reviewer_id);&#xA;ALTER TABLE Fact_Review ADD CONSTRAINT FK_Review_Date FOREIGN KEY (date) REFERENCES Dim_Date(date);&#xA;&#xA;&#xA;ALTER TABLE Fact_Calendar ADD CONSTRAINT FK_Calendar_Listing FOREIGN KEY (listing_id) REFERENCES Dim_Listing (id);&#xA;ALTER TABLE Fact_Calendar ADD CONSTRAINT FK_Calendar_Date FOREIGN KEY (date) REFERENCES Dim_Date(date);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -2987,44 +2987,44 @@
               startId="Package\Date\Fact_Review.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Date.Paths[Sort Output7]"
-              endId="Package\Date\Merge 1.Inputs[Merge Input 2]"
-              name="Sort Output"
-              startId="Package\Date\host_since.Outputs[Sort Output]" />
-            <path
-              refId="Package\Date.Paths[Sort Output]"
-              endId="Package\Date\Merge.Inputs[Merge Input 2]"
-              name="Sort Output"
-              startId="Package\Date\last_review.Outputs[Sort Output]" />
-            <path
-              refId="Package\Date.Paths[Sort Output1]"
               endId="Package\Date\Merge.Inputs[Merge Input 1]"
               name="Sort Output"
               startId="Package\Date\first_review.Outputs[Sort Output]" />
             <path
-              refId="Package\Date.Paths[Sort Output2]"
+              refId="Package\Date.Paths[Sort Output]"
               endId="Package\Date\Merge 1.Inputs[Merge Input 1]"
               name="Sort Output"
               startId="Package\Date\Sort.Outputs[Sort Output]" />
             <path
-              refId="Package\Date.Paths[Sort Output3]"
+              refId="Package\Date.Paths[Sort Output1]"
               endId="Package\Date\Merge 3.Inputs[Merge Input 1]"
               name="Sort Output"
               startId="Package\Date\Sort 2.Outputs[Sort Output]" />
             <path
-              refId="Package\Date.Paths[Sort Output4]"
+              refId="Package\Date.Paths[Sort Output2]"
               endId="Package\Date\Merge 2.Inputs[Merge Input 1]"
               name="Sort Output"
               startId="Package\Date\Sort 1.Outputs[Sort Output]" />
             <path
-              refId="Package\Date.Paths[Sort Output5]"
+              refId="Package\Date.Paths[Sort Output3]"
               endId="Package\Date\Merge 2.Inputs[Merge Input 2]"
               name="Sort Output"
               startId="Package\Date\date 1.Outputs[Sort Output]" />
             <path
-              refId="Package\Date.Paths[Sort Output6]"
+              refId="Package\Date.Paths[Sort Output4]"
               endId="Package\Date\Merge 3.Inputs[Merge Input 2]"
               name="Sort Output"
               startId="Package\Date\date 2.Outputs[Sort Output]" />
+            <path
+              refId="Package\Date.Paths[Sort Output5]"
+              endId="Package\Date\Merge 1.Inputs[Merge Input 2]"
+              name="Sort Output"
+              startId="Package\Date\host_since.Outputs[Sort Output]" />
+            <path
+              refId="Package\Date.Paths[Sort Output6]"
+              endId="Package\Date\Merge.Inputs[Merge Input 2]"
+              name="Sort Output"
+              startId="Package\Date\last_review.Outputs[Sort Output]" />
             <path
               refId="Package\Date.Paths[Sort Output8]"
               endId="Package\Date\Dim_Date.Inputs[OLE DB Destination Input]"
@@ -3099,7 +3099,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{876E7162-BFB3-46DA-8BDC-CC0AB80A9959}"
-          SQLTask:SqlStatementSource="--DROP CONSTRAINTS&#xA;ALTER TABLE Dim_Listing DROP CONSTRAINT FK_Listing_State&#xA;ALTER TABLE Dim_Listing DROP CONSTRAINT FK_Listing_City&#xA;ALTER TABLE Dim_Listing DROP CONSTRAINT FK_Listing_Country&#xA;ALTER TABLE Dim_Listing DROP CONSTRAINT FK_Listing_Host&#xA;ALTER TABLE Dim_Listing DROP CONSTRAINT FK_Listing_Date_1&#xA;ALTER TABLE Dim_Listing DROP CONSTRAINT FK_Listing_Date_2&#xA;&#xA;ALTER TABLE Dim_Host DROP CONSTRAINT FK_Host_Date&#xA;&#xA;ALTER TABLE Fact_Review DROP CONSTRAINT FK_Review_Listing&#xA;ALTER TABLE Fact_Review DROP CONSTRAINT FK_Review_Reviewer&#xA;ALTER TABLE Fact_Review DROP CONSTRAINT FK_Review_Date&#xA;&#xA;ALTER TABLE Fact_Calendar DROP CONSTRAINT FK_Calendar_Listing&#xA;ALTER TABLE Fact_Calendar DROP CONSTRAINT FK_Calendar_Date&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="--DROP CONSTRAINTS&#xA;ALTER TABLE Dim_Listing DROP CONSTRAINT FK_Listing_State&#xA;ALTER TABLE Dim_Listing DROP CONSTRAINT FK_Listing_City&#xA;ALTER TABLE Dim_Listing DROP CONSTRAINT FK_Listing_Country&#xA;ALTER TABLE Dim_Listing DROP CONSTRAINT FK_Listing_Host&#xA;ALTER TABLE Dim_Listing DROP CONSTRAINT FK_Listing_Date_1&#xA;ALTER TABLE Dim_Listing DROP CONSTRAINT FK_Listing_Date_2&#xA;&#xA;ALTER TABLE Fact_Review DROP CONSTRAINT FK_Review_Listing&#xA;ALTER TABLE Fact_Review DROP CONSTRAINT FK_Review_Reviewer&#xA;ALTER TABLE Fact_Review DROP CONSTRAINT FK_Review_Date&#xA;&#xA;&#xA;ALTER TABLE Fact_Calendar DROP CONSTRAINT FK_Calendar_Listing&#xA;ALTER TABLE Fact_Calendar DROP CONSTRAINT FK_Calendar_Date&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -10455,14 +10455,14 @@
               startId="Package\Listing - Host - Country - State - City\Data Conversion host.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Listing - Host - Country - State - City.Paths[Derived Column Output8]"
-              endId="Package\Listing - Host - Country - State - City\UPPER city.Inputs[Derived Column Input]"
-              name="Derived Column Output"
-              startId="Package\Listing - Host - Country - State - City\TRIM city.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Listing - Host - Country - State - City.Paths[Derived Column Output7]"
               endId="Package\Listing - Host - Country - State - City\Sort Fact.Inputs[Sort Input]"
               name="Derived Column Output"
               startId="Package\Listing - Host - Country - State - City\UPPER Fact text.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Listing - Host - Country - State - City.Paths[Derived Column Output7]"
+              endId="Package\Listing - Host - Country - State - City\Sort state.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Listing - Host - Country - State - City\UPPER state.Outputs[Derived Column Output]" />
             <path
               refId="Package\Listing - Host - Country - State - City.Paths[Derived Column Output5]"
               endId="Package\Listing - Host - Country - State - City\Sort city.Inputs[Sort Input]"
@@ -10470,14 +10470,14 @@
               startId="Package\Listing - Host - Country - State - City\UPPER city.Outputs[Derived Column Output]" />
             <path
               refId="Package\Listing - Host - Country - State - City.Paths[Derived Column Output4]"
-              endId="Package\Listing - Host - Country - State - City\Sort country.Inputs[Sort Input]"
+              endId="Package\Listing - Host - Country - State - City\UPPER city.Inputs[Derived Column Input]"
               name="Derived Column Output"
-              startId="Package\Listing - Host - Country - State - City\UPPER country.Outputs[Derived Column Output]" />
+              startId="Package\Listing - Host - Country - State - City\TRIM city.Outputs[Derived Column Output]" />
             <path
               refId="Package\Listing - Host - Country - State - City.Paths[Derived Column Output6]"
-              endId="Package\Listing - Host - Country - State - City\Sort state.Inputs[Sort Input]"
+              endId="Package\Listing - Host - Country - State - City\UPPER country.Inputs[Derived Column Input]"
               name="Derived Column Output"
-              startId="Package\Listing - Host - Country - State - City\UPPER state.Outputs[Derived Column Output]" />
+              startId="Package\Listing - Host - Country - State - City\TRIM country.Outputs[Derived Column Output]" />
             <path
               refId="Package\Listing - Host - Country - State - City.Paths[Derived Column Output2]"
               endId="Package\Listing - Host - Country - State - City\Sort host.Inputs[Sort Input]"
@@ -10485,19 +10485,19 @@
               startId="Package\Listing - Host - Country - State - City\TRIM host.Outputs[Derived Column Output]" />
             <path
               refId="Package\Listing - Host - Country - State - City.Paths[Derived Column Output1]"
+              endId="Package\Listing - Host - Country - State - City\Sort country.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Listing - Host - Country - State - City\UPPER country.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Listing - Host - Country - State - City.Paths[Derived Column Output]"
               endId="Package\Listing - Host - Country - State - City\UPPER state.Inputs[Derived Column Input]"
               name="Derived Column Output"
               startId="Package\Listing - Host - Country - State - City\TRIM state.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Listing - Host - Country - State - City.Paths[Derived Column Output]"
+              refId="Package\Listing - Host - Country - State - City.Paths[Derived Column Output3]"
               endId="Package\Listing - Host - Country - State - City\UPPER Fact text.Inputs[Derived Column Input]"
               name="Derived Column Output"
               startId="Package\Listing - Host - Country - State - City\TRIM Fact text.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Listing - Host - Country - State - City.Paths[Derived Column Output3]"
-              endId="Package\Listing - Host - Country - State - City\UPPER country.Inputs[Derived Column Input]"
-              name="Derived Column Output"
-              startId="Package\Listing - Host - Country - State - City\TRIM country.Outputs[Derived Column Output]" />
             <path
               refId="Package\Listing - Host - Country - State - City.Paths[Flat File Source Output]"
               endId="Package\Listing - Host - Country - State - City\Multicast.Inputs[Multicast Input 1]"
@@ -10530,24 +10530,24 @@
               startId="Package\Listing - Host - Country - State - City\Multicast.Outputs[Multicast Output 5]" />
             <path
               refId="Package\Listing - Host - Country - State - City.Paths[Sort Output3]"
-              endId="Package\Listing - Host - Country - State - City\Dim_State.Inputs[OLE DB Destination Input]"
-              name="Sort Output"
-              startId="Package\Listing - Host - Country - State - City\Sort state.Outputs[Sort Output]" />
-            <path
-              refId="Package\Listing - Host - Country - State - City.Paths[Sort Output]"
-              endId="Package\Listing - Host - Country - State - City\Dim_Host.Inputs[OLE DB Destination Input]"
-              name="Sort Output"
-              startId="Package\Listing - Host - Country - State - City\Sort host.Outputs[Sort Output]" />
-            <path
-              refId="Package\Listing - Host - Country - State - City.Paths[Sort Output1]"
               endId="Package\Listing - Host - Country - State - City\Dim_Listing.Inputs[OLE DB Destination Input]"
               name="Sort Output"
               startId="Package\Listing - Host - Country - State - City\Sort Fact.Outputs[Sort Output]" />
             <path
-              refId="Package\Listing - Host - Country - State - City.Paths[Sort Output2]"
+              refId="Package\Listing - Host - Country - State - City.Paths[Sort Output]"
               endId="Package\Listing - Host - Country - State - City\Dim_City.Inputs[OLE DB Destination Input]"
               name="Sort Output"
               startId="Package\Listing - Host - Country - State - City\Sort city.Outputs[Sort Output]" />
+            <path
+              refId="Package\Listing - Host - Country - State - City.Paths[Sort Output1]"
+              endId="Package\Listing - Host - Country - State - City\Dim_State.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Listing - Host - Country - State - City\Sort state.Outputs[Sort Output]" />
+            <path
+              refId="Package\Listing - Host - Country - State - City.Paths[Sort Output2]"
+              endId="Package\Listing - Host - Country - State - City\Dim_Host.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Listing - Host - Country - State - City\Sort host.Outputs[Sort Output]" />
             <path
               refId="Package\Listing - Host - Country - State - City.Paths[Sort Output4]"
               endId="Package\Listing - Host - Country - State - City\Dim_Country.Inputs[OLE DB Destination Input]"
@@ -11760,57 +11760,57 @@
         <NodeLayout
           Size="153.333333333334,42.6666666666667"
           Id="Package\Add Constraints"
-          TopLeft="973.072873166919,233.323726247994" />
-        <NodeLayout
-          Size="129.333333333334,42.6666666666667"
-          Id="Package\Clear Data"
-          TopLeft="84.7916628761839,146.755548557706" />
-        <NodeLayout
-          Size="101.333333333334,42.6666666666667"
-          Id="Package\Date"
-          TopLeft="837.760379215859,234.180544388956" />
-        <NodeLayout
-          Size="185.333333333334,42.6666666666667"
-          Id="Package\Delete redundant data"
-          TopLeft="594.791640077408,140.093048875398" />
-        <NodeLayout
-          Size="194.666666666667,42.6666666666667"
-          Id="Package\Delete redundant data 2"
-          TopLeft="594.791640077408,233.205544435448" />
-        <NodeLayout
-          Size="194.666666666667,42.6666666666667"
-          Id="Package\Delete redundant data 3"
-          TopLeft="594.791640077409,308.605540840095" />
-        <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\Drop constraints"
-          TopLeft="73.5416633790981,72.6555520910688" />
+          TopLeft="981.406206127723,163.268174032948" />
         <NodeLayout
           Size="146.666666666667,42.6666666666667"
           Id="Package\Fact_Calendar"
-          TopLeft="199.166657763224,307.305540902086" />
+          TopLeft="207.499990724028,237.249988687039" />
+        <NodeLayout
+          Size="129.333333333334,42.6666666666667"
+          Id="Package\Clear Data"
+          TopLeft="93.1249958369882,76.6999963426591" />
+        <NodeLayout
+          Size="101.333333333334,42.6666666666667"
+          Id="Package\Date"
+          TopLeft="846.093712176663,164.12499217391" />
+        <NodeLayout
+          Size="185.333333333334,42.6666666666667"
+          Id="Package\Delete redundant data"
+          TopLeft="603.124973038212,70.0374966603518" />
+        <NodeLayout
+          Size="194.666666666667,42.6666666666667"
+          Id="Package\Delete redundant data 2"
+          TopLeft="603.124973038212,163.149992220402" />
+        <NodeLayout
+          Size="194.666666666667,42.6666666666667"
+          Id="Package\Delete redundant data 3"
+          TopLeft="603.124973038213,238.549988625049" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\Drop constraints"
+          TopLeft="81.8749963399024,2.59999987602234" />
         <NodeLayout
           Size="252,42.6666666666667"
           Id="Package\Listing - Host - Country - State - City"
-          TopLeft="317.291652482625,140.905548836655" />
+          TopLeft="325.624985443429,70.8499966216089" />
         <NodeLayout
           Size="192,42.6666666666667"
           Id="Package\Reviewer - Fact_Review"
-          TopLeft="330.416651895891,230.605544559426" />
+          TopLeft="338.749984856695,160.54999234438" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="214.124996209518,165.163882030514">
+          TopLeft="222.458329170322,95.1083298154673">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
               EndConnector="103.166656273107,0"
               Start="0,0"
-              End="95.666656273107,0">
+              End="95.6666562731074,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="95.666656273107,0" />
+                    End="95.6666562731074,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11821,7 +11821,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="569.291652482625,161.83263218936">
+          TopLeft="577.624985443429,91.7770799743137">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11843,7 +11843,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="939.093712549192,255.085468651809">
+          TopLeft="947.427045509996,185.029916436763">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11865,7 +11865,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="402.624985815958,183.572215503322">
+          TopLeft="410.958318776762,113.516663288276">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11899,7 +11899,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="522.416651895891,253.23887783077">
+          TopLeft="530.749984856695,183.183325615724">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11921,7 +11921,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="687.458306744075,182.759715542064">
+          TopLeft="695.791639704879,112.704163327018">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11955,7 +11955,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="345.833324429891,329.288874204424">
+          TopLeft="354.166657390695,259.233321989377">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11977,7 +11977,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="483.958319149292,183.572215503322">
+          TopLeft="492.291652110096,113.516663288276">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12011,7 +12011,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="789.458306744075,255.026377745535">
+          TopLeft="797.791639704879,184.970825530489">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12033,7 +12033,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="150.833329794308,115.322218757735">
+          TopLeft="159.166662755112,45.266666542689">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12055,7 +12055,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="692.124973410742,308.605540840095">
+          TopLeft="700.458306371546,238.549988625049">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12091,58 +12091,137 @@
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Fact_Calendar">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\Fact_Calendar\Conditional Split"
+          TopLeft="217.749993715435,121.499996262789" />
+        <NodeLayout
+          Size="146.666666666667,42.6666666666667"
+          Id="Package\Fact_Calendar\Fact_Calendar"
+          TopLeft="434.624987112359,123.249996268749" />
+        <NodeLayout
+          Size="120,42.6666666666667"
+          Id="Package\Fact_Calendar\calendar"
+          TopLeft="42.4999987334014,121.999996364117" />
+        <EdgeLayout
+          Id="Package\Fact_Calendar.Paths[Flat File Source Output]"
+          TopLeft="162.499998733401,143.083329646786">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.2499949820334,0"
+              Start="0,0"
+              End="47.7499949820334,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="47.7499949820334,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact_Calendar.Paths[Case 1]"
+          TopLeft="373.749993715435,143.708329599102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.874993396924,0"
+              Start="0,0"
+              End="53.374993396924,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="53.374993396924,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="11.469410760962,5,30.436171875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact_Calendar\Fact_Calendar">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Date">
     <LayoutInfo>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="134,42.6666666666667"
+          Id="Package\Date\Dim_Listing"
+          TopLeft="38.8095226529098,111.95237761594" />
+        <NodeLayout
           Size="108,42.6666666666667"
           Id="Package\Date\Sort 2"
           TopLeft="1130.90905720537,247.575750450293" />
-        <NodeLayout
-          Size="138,42.6666666666667"
-          Id="Package\Date\Fact_Review"
-          TopLeft="46.9999985992908,370.999988943339" />
         <NodeLayout
           Size="118.666666666667,42.6666666666667"
           Id="Package\Date\Merge 3"
           TopLeft="1116.13633037291,329.090900127635" />
         <NodeLayout
-          Size="134,42.6666666666667"
-          Id="Package\Date\Dim_Listing"
-          TopLeft="38.8095226529098,111.95237761594" />
+          Size="125.333333333334,42.6666666666667"
+          Id="Package\Date\Dim_Host"
+          TopLeft="49.9999985098838,218.222219281726" />
         <NodeLayout
-          Size="146.666666666667,42.6666666666667"
-          Id="Package\Date\Fact_Calendar"
-          TopLeft="48.9999985396862,286.999991446734" />
+          Size="118.666666666667,42.6666666666667"
+          Id="Package\Date\Merge 2"
+          TopLeft="975.218585654836,247.909086580529" />
         <NodeLayout
           Size="129.333333333334,42.6666666666667"
           Id="Package\Date\host_since"
           TopLeft="418.571416097028,214.285708963871" />
         <NodeLayout
-          Size="108,42.6666666666667"
-          Id="Package\Date\Sort 1"
-          TopLeft="984.545425203714,165.757571070483" />
+          Size="98.6666666666667,42.6666666666667"
+          Id="Package\Date\Sort"
+          TopLeft="737.539660559288,113.412695032737" />
         <NodeLayout
-          Size="126.666666666667,42.6666666666667"
-          Id="Package\Date\Dim_Date"
-          TopLeft="1118.8181484748,467.484834805583" />
+          Size="146.666666666667,42.6666666666667"
+          Id="Package\Date\Fact_Calendar"
+          TopLeft="48.9999985396862,286.999991446734" />
         <NodeLayout
           Size="109.333333333334,42.6666666666667"
           Id="Package\Date\Merge 1"
           TopLeft="826.90473726108,167.857138918979" />
         <NodeLayout
+          Size="108,42.6666666666667"
+          Id="Package\Date\Sort 3"
+          TopLeft="1117.81814850461,396.484837788524" />
+        <NodeLayout
           Size="134,42.6666666666667"
           Id="Package\Date\first_review"
           TopLeft="416.428559018033,62.8571420482227" />
         <NodeLayout
-          Size="98.6666666666667,42.6666666666667"
-          Id="Package\Date\Sort"
-          TopLeft="737.539660559288,113.412695032737" />
-        <NodeLayout
-          Size="118.666666666667,42.6666666666667"
-          Id="Package\Date\Merge 2"
-          TopLeft="975.218585654836,247.909086580529" />
+          Size="138,42.6666666666667"
+          Id="Package\Date\Fact_Review"
+          TopLeft="46.9999985992908,370.999988943339" />
         <NodeLayout
           Size="109.333333333334,42.6666666666667"
           Id="Package\Date\date 2"
@@ -12156,17 +12235,17 @@
           Id="Package\Date\Multicast"
           TopLeft="198.571422653539,112.857142686844" />
         <NodeLayout
-          Size="125.333333333334,42.6666666666667"
-          Id="Package\Date\Dim_Host"
-          TopLeft="49.9999985098838,218.222219281726" />
-        <NodeLayout
-          Size="108,42.6666666666667"
-          Id="Package\Date\Sort 3"
-          TopLeft="1117.81814850461,396.484837788524" />
+          Size="126.666666666667,42.6666666666667"
+          Id="Package\Date\Dim_Date"
+          TopLeft="1118.8181484748,467.484834805583" />
         <NodeLayout
           Size="109.333333333334,42.6666666666667"
           Id="Package\Date\date 1"
           TopLeft="425.714273027012,282.857135491712" />
+        <NodeLayout
+          Size="108,42.6666666666667"
+          Id="Package\Date\Sort 1"
+          TopLeft="984.545425203714,165.757571070483" />
         <NodeLayout
           Size="132,42.6666666666667"
           Id="Package\Date\last_review"
@@ -12206,7 +12285,35 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Date.Paths[Sort Output1]"
+          Id="Package\Date.Paths[Sort Output]"
+          TopLeft="836.206327225954,134.74602836607">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.3650767017925,33.1111105529089"
+              Start="0,0"
+              End="45.3650767017925,25.6111105529089">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.3650767017925,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.3650767017925,0"
+                    Point2="45.3650767017925,0"
+                    Point3="45.3650767017925,4" />
+                  <mssgle:LineSegment
+                    End="45.3650767017925,25.6111105529089" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Date.Paths[Sort Output7]"
           TopLeft="550.428559018033,84.190475381556">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12240,7 +12347,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Date.Paths[Sort Output]"
+          Id="Package\Date.Paths[Sort Output6]"
           TopLeft="549.85713040403,178.476186857337">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12274,7 +12381,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Date.Paths[Sort Output7]"
+          Id="Package\Date.Paths[Sort Output5]"
           TopLeft="547.904749430362,235.619042297205">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12308,7 +12415,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Date.Paths[Sort Output6]"
+          Id="Package\Date.Paths[Sort Output4]"
           TopLeft="536.476177746342,390.619037677845">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12342,7 +12449,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Date.Paths[Sort Output5]"
+          Id="Package\Date.Paths[Sort Output3]"
           TopLeft="535.047606360345,304.190468825045">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12376,7 +12483,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Date.Paths[Sort Output4]"
+          Id="Package\Date.Paths[Sort Output2]"
           TopLeft="1036.54867209594,208.42423773715">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12398,7 +12505,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Date.Paths[Sort Output3]"
+          Id="Package\Date.Paths[Sort Output1]"
           TopLeft="1184.90905720537,290.24241711696">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12423,78 +12530,6 @@
                     Point3="-9.43939349913217,23.4242415053376" />
                   <mssgle:LineSegment
                     End="-9.43939349913217,31.3484830106751" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Date.Paths[Sort Output2]"
-          TopLeft="836.206327225954,134.74602836607">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="45.3650767017925,33.1111105529089"
-              Start="0,0"
-              End="45.3650767017925,25.6111105529089">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="41.3650767017925,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="41.3650767017925,0"
-                    Point2="45.3650767017925,0"
-                    Point3="45.3650767017925,4" />
-                  <mssgle:LineSegment
-                    End="45.3650767017925,25.6111105529089" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Date.Paths[OLE DB Source Output3]"
-          TopLeft="175.333331843217,237.587297456132">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="243.238084253811,0"
-              Start="0,0"
-              End="235.738084253811,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="235.738084253811,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Date.Paths[OLE DB Source Output2]"
-          TopLeft="172.80952265291,133.738093484725">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="25.7619000006292,0"
-              Start="0,0"
-              End="18.2619000006292,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="18.2619000006292,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12539,6 +12574,50 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="222.547607820659,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Date.Paths[OLE DB Source Output3]"
+          TopLeft="175.333331843217,237.587297456132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="243.238084253811,0"
+              Start="0,0"
+              End="235.738084253811,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="235.738084253811,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Date.Paths[OLE DB Source Output2]"
+          TopLeft="172.80952265291,133.738093484725">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25.7619000006292,0"
+              Start="0,0"
+              End="18.2619000006292,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.2619000006292,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12707,7 +12786,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Date\Fact_Review">
+    design-time-name="Package\Date\Dim_Listing">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12720,7 +12799,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Date\Dim_Listing">
+    design-time-name="Package\Date\Dim_Host">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12746,99 +12825,20 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Date\Fact_Review">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Date\Dim_Date">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Date\Dim_Host">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Fact_Calendar">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="156,42.6666666666667"
-          Id="Package\Fact_Calendar\Conditional Split"
-          TopLeft="217.749993715435,121.499996262789" />
-        <NodeLayout
-          Size="146.666666666667,42.6666666666667"
-          Id="Package\Fact_Calendar\Fact_Calendar"
-          TopLeft="434.624987112359,123.249996268749" />
-        <NodeLayout
-          Size="120,42.6666666666667"
-          Id="Package\Fact_Calendar\calendar"
-          TopLeft="42.4999987334014,121.999996364117" />
-        <EdgeLayout
-          Id="Package\Fact_Calendar.Paths[Flat File Source Output]"
-          TopLeft="162.499998733401,143.083329646786">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="55.2499949820334,0"
-              Start="0,0"
-              End="47.7499949820334,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="47.7499949820334,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact_Calendar.Paths[Case 1]"
-          TopLeft="373.749993715435,143.708329599102">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="60.874993396924,0"
-              Start="0,0"
-              End="53.374993396924,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="53.374993396924,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="11.469410760962,5,30.436171875,9.5537109375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact_Calendar\Fact_Calendar">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12872,10 +12872,6 @@
           Id="Package\Listing - Host - Country - State - City\Sort state"
           TopLeft="1174.99994747341,88.2142815079009" />
         <NodeLayout
-          Size="134,42.6666666666667"
-          Id="Package\Listing - Host - Country - State - City\Dim_Listing"
-          TopLeft="1377.94636697243,308.066656872432" />
-        <NodeLayout
           Size="130.666666666667,42.6666666666667"
           Id="Package\Listing - Host - Country - State - City\UPPER city"
           TopLeft="1003.47217736352,16.6111103190316" />
@@ -12892,6 +12888,10 @@
           Id="Package\Listing - Host - Country - State - City\TRIM state"
           TopLeft="811.80551926502,84.4629602423421" />
         <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Listing - Host - Country - State - City\Sort Fact"
+          TopLeft="1196.69637507493,308.066656872432" />
+        <NodeLayout
           Size="122.666666666667,42.6666666666667"
           Id="Package\Listing - Host - Country - State - City\Sort host"
           TopLeft="1197.58923217787,238.423803050405" />
@@ -12904,13 +12904,13 @@
           Id="Package\Listing - Host - Country - State - City\Dim_City"
           TopLeft="1372.91660529251,19.4999990701676" />
         <NodeLayout
-          Size="121.333333333334,42.6666666666667"
-          Id="Package\Listing - Host - Country - State - City\Sort Fact"
-          TopLeft="1196.69637507493,308.066656872432" />
-        <NodeLayout
           Size="106.666666666667,42.6666666666667"
           Id="Package\Listing - Host - Country - State - City\listing"
           TopLeft="12.6562494342216,170.949991848469" />
+        <NodeLayout
+          Size="134,42.6666666666667"
+          Id="Package\Listing - Host - Country - State - City\Dim_Listing"
+          TopLeft="1377.94636697243,308.066656872432" />
         <NodeLayout
           Size="180,42.6666666666667"
           Id="Package\Listing - Host - Country - State - City\Data Conversion host"
@@ -12990,73 +12990,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Listing - Host - Country - State - City.Paths[Sort Output1]"
-          TopLeft="1318.02970840826,329.399990205765">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="59.9166585641667,0"
-              Start="0,0"
-              End="52.4166585641667,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="52.4166585641667,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Listing - Host - Country - State - City.Paths[Sort Output]"
-          TopLeft="1320.25589884454,259.447612588973">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="54.1190397161108,0"
-              Start="0,0"
-              End="46.6190397161108,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="46.6190397161108,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Listing - Host - Country - State - City.Paths[Sort Output3]"
-          TopLeft="1300.33328080674,108.851186303014">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="75.3214200697842,0"
-              Start="0,0"
-              End="67.8214200697842,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="67.8214200697842,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Listing - Host - Country - State - City.Paths[Sort Output2]"
           TopLeft="1290.98804283125,40.3690467113541">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13078,31 +13012,97 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Listing - Host - Country - State - City.Paths[Sort Output3]"
+          TopLeft="1318.02970840826,329.399990205765">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="59.9166585641667,0"
+              Start="0,0"
+              End="52.4166585641667,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="52.4166585641667,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Listing - Host - Country - State - City.Paths[Sort Output2]"
+          TopLeft="1320.25589884454,259.447612588973">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.1190397161108,0"
+              Start="0,0"
+              End="46.6190397161108,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46.6190397161108,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Listing - Host - Country - State - City.Paths[Sort Output1]"
+          TopLeft="1300.33328080674,108.851186303014">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75.3214200697842,0"
+              Start="0,0"
+              End="67.8214200697842,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="67.8214200697842,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Listing - Host - Country - State - City.Paths[Multicast Output 5]"
-          TopLeft="269.555547061894,209.066658732097">
+          TopLeft="269.555547061894,209.066658732096">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
               EndConnector="167.152770206126,106.833326204618"
               Start="0,0"
-              End="167.152770206126,99.3333262046183">
+              End="167.152770206126,99.3333262046184">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.5676037450504" />
+                    End="0,39.5676037450505" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.5676037450504"
-                    Point2="0,43.5676037450504"
-                    Point3="4,43.5676037450504" />
+                    Point1="0,39.5676037450505"
+                    Point2="0,43.5676037450505"
+                    Point3="4,43.5676037450505" />
                   <mssgle:LineSegment
-                    End="163.152770206126,43.5676037450504" />
+                    End="163.152770206126,43.5676037450505" />
                   <mssgle:CubicBezierSegment
-                    Point1="163.152770206126,43.5676037450504"
-                    Point2="167.152770206126,43.5676037450504"
-                    Point3="167.152770206126,47.5676037450504" />
+                    Point1="163.152770206126,43.5676037450505"
+                    Point2="167.152770206126,43.5676037450505"
+                    Point3="167.152770206126,47.5676037450505" />
                   <mssgle:LineSegment
-                    End="167.152770206126,99.3333262046183" />
+                    End="167.152770206126,99.3333262046184" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13258,19 +13258,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output7]"
-          TopLeft="1169.88884356453,329.181469903346">
+          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output]"
+          TopLeft="943.138852598354,107.962960139027">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="26.8075315104056,0"
+              EndConnector="61.0277691785667,0"
               Start="0,0"
-              End="19.3075315104056,0">
+              End="53.5277691785667,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="19.3075315104056,0" />
+                    End="53.5277691785667,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13280,19 +13280,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output6]"
-          TopLeft="1141.49995511025,109.838620771807">
+          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output1]"
+          TopLeft="1161.13884365766,191.294966094015">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="33.4999923631544,0"
+              EndConnector="31.7182458746177,0"
               Start="0,0"
-              End="25.9999923631544,0">
+              End="24.2182458746177,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="25.9999923631544,0" />
+                    End="24.2182458746177,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13302,51 +13302,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output3]"
-          TopLeft="961.430519013564,191.237032036605">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="50.3749913107603,0"
-              Start="0,0"
-              End="42.8749913107603,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="42.8749913107603,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output5]"
-          TopLeft="1134.13884403019,38.9246023357861">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="38.1825321343924,0"
-              Start="0,0"
-              End="30.6825321343924,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="30.6825321343924,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output8]"
+          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output4]"
           TopLeft="930.249963957818,37.925925788173">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13359,28 +13315,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="65.722213405702,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output]"
-          TopLeft="966.694407905557,330.425911840687">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="47.1944356589686,0"
-              Start="0,0"
-              End="39.6944356589686,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="39.6944356589686,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13412,19 +13346,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output4]"
-          TopLeft="1161.13884365766,191.294966094015">
+          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output3]"
+          TopLeft="966.694407905557,330.425911840687">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="31.7182458746177,0"
+              EndConnector="47.1944356589686,0"
               Start="0,0"
-              End="24.2182458746177,0">
+              End="39.6944356589686,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="24.2182458746177,0" />
+                    End="39.6944356589686,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13434,19 +13368,85 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output1]"
-          TopLeft="943.138852598354,107.962960139027">
+          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output8]"
+          TopLeft="1169.88884356453,329.181469903346">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="61.0277691785667,0"
+              EndConnector="26.8075315104056,0"
               Start="0,0"
-              End="53.5277691785667,0">
+              End="19.3075315104056,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="53.5277691785667,0" />
+                    End="19.3075315104056,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output5]"
+          TopLeft="1134.13884403019,38.9246023357861">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="38.1825321343924,0"
+              Start="0,0"
+              End="30.6825321343924,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="30.6825321343924,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output6]"
+          TopLeft="961.430519013564,191.237032036605">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="50.3749913107603,0"
+              Start="0,0"
+              End="42.8749913107603,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="42.8749913107603,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Listing - Host - Country - State - City.Paths[Derived Column Output7]"
+          TopLeft="1141.49995511025,109.838620771807">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.4999923631544,0"
+              Start="0,0"
+              End="25.9999923631544,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="25.9999923631544,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13577,21 +13577,21 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="60.9583236941453,0"
+              EndConnector="60.9583236941448,0"
               Start="0,0"
-              End="53.4583236941453,0">
+              End="53.4583236941448,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="53.4583236941453,0" />
+                    End="53.4583236941448,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="11.5110759095726,5,30.436171875,9.5537109375"
+              BoundingBox="11.5110759095724,5,30.436171875,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -13636,19 +13636,6 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Listing - Host - Country - State - City\Dim_Listing">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Listing - Host - Country - State - City\Dim_Country">
     <Properties>
       <Property>
@@ -13663,6 +13650,19 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Listing - Host - Country - State - City\Dim_City">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Listing - Host - Country - State - City\Dim_Listing">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
